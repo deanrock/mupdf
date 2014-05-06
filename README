@@ -1,3 +1,18 @@
+BUILD GUIDE
+
+$ mkdir ~/mupdf && cd ~/mupdf
+$ git clone git://git.ghostscript.com/mupdf.git
+$ git checkout tags/1.4
+$ git submodule update —init
+$ make generate
+$ cd platform/android
+~/mupdf/platform/android $ cp local.properties.sample local.properties
+~/mupdf/platform/android $ nano local.properties
+~/mupdf/platform/android $ /path/to/ndk-build
+
+
+--------
+
 ABOUT
 
 MuPDF is a lightweight PDF, XPS and CBZ viewer and parser/rendering library.

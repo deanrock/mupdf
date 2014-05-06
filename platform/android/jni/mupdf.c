@@ -290,7 +290,7 @@ JNI_FN(MuPDFCore_openFile)(JNIEnv * env, jobject thiz, jstring jfilename)
 	}
 
 	/* 128 MB store for low memory devices. Tweak as necessary. */
-	glo->ctx = ctx = fz_new_context(NULL, NULL, 512 << 20);
+	glo->ctx = ctx = fz_new_context(NULL, NULL, 32 << 20);
 	if (!ctx)
 	{
 		LOGE("Failed to initialise context");
@@ -424,7 +424,7 @@ JNI_FN(MuPDFCore_openBuffer)(JNIEnv * env, jobject thiz)
 	buffer_fid = (*env)->GetFieldID(env, clazz, "fileBuffer", "[B");
 
 	/* 128 MB store for low memory devices. Tweak as necessary. */
-	glo->ctx = ctx = fz_new_context(NULL, NULL, 512 << 20);
+	glo->ctx = ctx = fz_new_context(NULL, NULL, 32 << 20);
 	if (!ctx)
 	{
 		LOGE("Failed to initialise context");
